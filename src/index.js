@@ -22,7 +22,7 @@ const createWindow = () => {
   });
 
   mainWindow.webContents.once('dom-ready',()=>{
-    getconf(mainWindow);
+    data = getconf(init_main);
   });
   
   
@@ -72,30 +72,36 @@ ipc.on('openproject',function(event,args){
 ipc.on('closeapp',function(event,args){
   app.quit();
 })
-
-function getconf(a){
-  var path = __dirname+'/../c.json';
-  var fs = require('fs');
-  fs.readFile(path,'utf8',function(err,data){
-    if(err) return  console.log(err);
-    else{
-      data = JSON.parse(data);
-      a.webContents.send('initd',data);
-    }
-  })
-}
-
 ipc.on('boot',function(event,args){
-  var path = __dirname+'/../c.json';
+  data = getconf(init_boot);
+})
+
+var confdata;
+function getconf(func){
+  var path = __dirname + '/../c.json';
   var fs = require('fs');
+  var confpath = '';
   fs.readFile(path,'utf8',function(err,data){
-    if(err) return  console.log(err);
+    if(err) return console.log(err);
     else{
       data = JSON.parse(data);
-      exec('"'+data['boot']['navicat']+'"');
-      exec('"'+data['boot']['filezilla']+'"');
-      exec('"'+data['boot']['chrome']+'"');
-      exec('code');
+      confpath = data.confpath;
+      fs.readFile(confpath,'utf8',function(err,data){
+        if(err) return console.log(err);
+        else{
+          confdata = JSON.parse(data);
+          func();
+        }
+      });
     }
-  })
-})
+  });
+}
+function init_main(){
+  mainWindow.webContents.send('initd',confdata);
+}
+function init_boot(){
+  exec('"'+confdata['boot']['navicat']+'"');
+  exec('"'+confdata['boot']['filezilla']+'"');
+  exec('"'+confdata['boot']['chrome']+'"');
+  exec('code');
+}

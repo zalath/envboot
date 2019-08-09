@@ -8,11 +8,11 @@
   <body>
     
     <div class="view face hidden" id="pm">
-      <iframe id="pmw" src="http://pm.99-k.com/user_login.php?backcode=767934595c90765dea0265087cab68e7"></iframe>
+      <iframe id="pmw" src=""></iframe>
     </div>
 
     <div class="view face hidden" id="tm">
-      <iframe id="tmw" src="http://tm.99-k.com/index.php?s=/Home/User/login"></iframe>
+      <iframe id="tmw" src=""></iframe>
     </div>
     
     <div class="view starter face" id="starter">
@@ -38,6 +38,7 @@
     }
     //init data
     ipc.on('initd',function(event,jda){
+      //init project list
       var bodyele = $('.starter')[0];
       var body = jda.starter;
       for(let d in body){
@@ -51,6 +52,7 @@
           bodyele.appendChild(b);
         }
       };
+      //init menu
       var menu = jda.menu;
       var menuele = $('#menu')[0];
       for(let d in menu){
@@ -59,12 +61,19 @@
         li.innerText = menu[d]['name'];
         menuele.appendChild(li);
       }
+      //pm N tm init
+      var url = jda.url;
+      var pmele = document.getElementById('pmw');
+      var tmele = document.getElementById('tmw');
+      pmele.setAttribute('src',url.pm);
+      tmele.setAttribute('src',url.tm);
     });
     //switch display
     function hi(id){//hightlight
       $('.face').addClass('hidden');
       $('#'+id).removeClass('hidden');
     }
+    //add an empty line to the list
     function add_bar(body){
       var b = document.createElement('br');
       b.style.clear = 'both';
@@ -77,6 +86,7 @@
       body.appendChild(b2);
       return body;
     }
+    //start basic work environment
     function boot(){
       ipc.send('boot',{});
     }
