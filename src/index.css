@@ -1,0 +1,118 @@
+body{
+    background-color:#000;
+    margin:0px;
+}
+.btn{
+    float:left;
+    margin-top: 20px;
+    margin-left: 20px;
+    border: solid 1px #fff;
+    border-radius: 10px;
+    font-size: large;
+    color: #fff;
+    width: 300px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    padding:10px;
+    -webkit-app-region:no-drag;
+}
+.btn:hover{
+    background-color:#555;
+}
+.top{
+    position: absolute;
+    height:50px;
+    width:100%;
+    -webkit-app-region:drag;
+    line-height: 50px;
+}
+.close{
+    width:15px;
+    height:100%;
+    background-color:red;
+    position: absolute;
+    right:0px;
+    top:0px;
+    -webkit-app-region:no-drag;
+}
+.starter{
+    -webkit-app-region:drag;
+}
+.view{
+    position: absolute;
+    height: calc(100% - 50px);
+    width: calc(100% - 15px);
+    overflow: hidden;
+}
+.view iframe{
+    width:100%;
+    height:100%;
+    border:none;
+}
+.face{
+    margin-top:50px;
+    margin-right:15px;
+}
+.menu{
+    color: white;
+    position: absolute;
+    bottom: 0px;
+}
+.menu ul{
+    list-style: none;
+    text-align:center;
+    margin-left:30px;
+}
+.menu ul li{
+    border: solid 1px #fff;
+    background-color: #888;
+    border-radius: 35px;
+    line-height: 50px;
+    height:50px;
+    width:50px;
+    padding: 10px;
+    font-size:14px;
+    margin-bottom:8px;
+    transition: all .05s linear;
+    -webkit-app-region:no-drag;
+}
+.menu ul li:hover{
+    animation: menuhover .1s;
+    transition: all .1s ease-in;
+    border-radius: 45px;
+    line-height: 60px;
+    height:60px;
+    width:60px;
+    padding: 15px;
+    font-size:20px;
+}
+@keyframes menuhover{
+    from {
+        border-radius: 35px;
+        line-height: 50px;
+        height:50px;
+        width:50px;
+        padding: 10px;
+        font-size:14px;
+    }
+    to {
+        border-radius: 45px;
+        line-height: 60px;
+        height:60px;
+        width:60px;
+        padding: 15px;
+        font-size:20px;
+    }
+}
+.hidden{
+    display: none;
+}
+.boot{
+    position: absolute;
+    height: 200px;
+    width: 15px;
+    background-color: #333;
+    bottom: 0px;
+    right: 0px;
+}

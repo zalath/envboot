@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="index.css" type="text/css" />
+    <title></title>
+  </head>
+  <body>
+    
+    <div class="view face hidden" id="pm">
+      <iframe id="pmw" src="http://pm.99-k.com/user_login.php?backcode=767934595c90765dea0265087cab68e7"></iframe>
+    </div>
+
+    <div class="view face hidden" id="tm">
+      <iframe id="tmw" src="http://tm.99-k.com/index.php?s=/Home/User/login"></iframe>
+    </div>
+    
+    <div class="view starter face" id="starter">
+    </div>
+
+    <div class="menu">
+      <ul id='menu'>
+      </ul>
+    </div>
+
+    <div class="top"></div>
+    <div class="close" onclick="closeapp();"></div>
+    <div class="boot" onclick="boot();"></div>
+  </body>
+  <script>
+    window.$ = window.jQuery = require('./jquery-3.4.1.min.js');
+    const ipc = require('electron').ipcRenderer;
+    function openproject(pname){
+      ipc.send('openproject',{path:pname});
+    }
+    function closeapp(){
+      ipc.send('closeapp',{});
+    }
+    //init data
+    ipc.on('initd',function(event,jda){
+      var bodyele = $('.starter')[0];
+      var body = jda.starter;
+      for(let d in body){
+        if(body[d] == ''){
+          bodyele = add_bar(bodyele);
+        }else{
+          var b = document.createElement('div');
+          b.className = 'btn';
+          b.setAttribute('onclick',"openproject('"+body[d].path+"');")
+          b.innerText = body[d].name;
+          bodyele.appendChild(b);
+        }
+      };
+      var menu = jda.menu;
+      var menuele = $('#menu')[0];
+      for(let d in menu){
+        var li = document.createElement('li');
+        li.setAttribute('onclick',"hi('"+menu[d]['id']+"');");
+        li.innerText = menu[d]['name'];
+        menuele.appendChild(li);
+      }
+    });
+    //switch display
+    function hi(id){//hightlight
+      $('.face').addClass('hidden');
+      $('#'+id).removeClass('hidden');
+    }
+    function add_bar(body){
+      var b = document.createElement('br');
+      b.style.clear = 'both';
+      var b1 = document.createElement('br');
+      b.style.clear = 'both';
+      var b2 = document.createElement('br');
+      b.style.clear = 'both';
+      body.appendChild(b);
+      body.appendChild(b1);
+      body.appendChild(b2);
+      return body;
+    }
+    function boot(){
+      ipc.send('boot',{});
+    }
+  </script>
+</html>
