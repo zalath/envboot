@@ -9,7 +9,8 @@
     - npm start
 - build
     - electron-forge make
-
+## view
+![envboot](http://tm.99-k.com/envboot.jpg "envboot")
 ## configuration
 - config file's path is set in /c.json, change it to suit your needs.
 - config file's format is like:
