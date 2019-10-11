@@ -100,8 +100,10 @@ function init_main(){
   mainWindow.webContents.send('initd',confdata);
 }
 function init_boot(){
-  exec('"'+confdata['boot']['navicat']+'"');
-  exec('"'+confdata['boot']['filezilla']+'"');
-  exec('"'+confdata['boot']['chrome']+'"');
-  exec('code');
+  var list = confdata['boot'];
+  var i = 1;
+  while(typeof(list[i]) != 'undefined'){
+    exec('"'+list[i]+'"');
+    i++;
+  }
 }

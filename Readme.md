@@ -92,9 +92,9 @@
         }
     },
     "boot":{
-        "navicat":"C:/Progra...icat.exe",
-        "filezilla":"C:/Pr...ient/filezilla.exe",
-        "chrome":"C:/Users/z....tion/chrome.exe"
+        "1":"C:/Progra...icat.exe",
+        "2":"C:/Pr...ient/filezilla.exe",
+        "3":"C:/Users/z....tion/chrome.exe"
     },
     "url":{
         "pm":"https://google.com",
@@ -130,10 +130,10 @@
             "id":"tm"
         }
     },
-    "boot":{// some programe to start, if you want to add more, you need to change the source code in index.js on line 102
-        "navicat":"C:/P....at Premium 12/navicat.exe",
-        "filezilla":"C:/P....P Client/filezilla.exe",
-        "chrome":"C:/Use...ication/chrome.exe"
+    "boot":{// some programe to start, if you want more, just follow the number and addin
+        "1":"C:/P....at Premium 12/navicat.exe",
+        "2":"C:/P....P Client/filezilla.exe",
+        "3":"C:/Use...ication/chrome.exe"
     },
     "url":{
         "pm":"any url start from http, effect the menu 2 above. Read the source code if you want to change",
