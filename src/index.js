@@ -103,7 +103,11 @@ function init_boot(){
   var list = confdata['boot'];
   var i = 1;
   while(typeof(list[i]) != 'undefined'){
-    exec('"'+list[i]+'"');
+    if(list[i].indexOf('/')>0){
+      exec('"'+list[i]+'"');
+    }else{
+      exec(list[i]);
+    }
     i++;
   }
 }
