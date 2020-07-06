@@ -33,6 +33,9 @@
     function openproject(pname){
       ipc.send('openproject',{path:pname});
     }
+    function openpath(pname){
+      ipc.send('openpath',{path:pname});
+    }
     function closeapp(){
       ipc.send('closeapp',{});
     }
@@ -48,6 +51,7 @@
           var b = document.createElement('div');
           b.className = 'btn';
           b.setAttribute('onclick',"openproject('"+body[d].path+"');")
+          b.setAttribute('oncontextmenu',"openpath('"+body[d].path+"');")
           b.innerText = body[d].name;
           bodyele.appendChild(b);
         }

@@ -69,6 +69,11 @@ app.on('activate', () => {
 ipc.on('openproject',function(event,args){
   exec('code '+args['path'],{});
 });
+ipc.on('openpath',function(event,args){
+  var path = args['path'];
+  path = path.replace(/\//g,'\\');
+  exec('explorer '+ path,{});
+});
 ipc.on('closeapp',function(event,args){
   app.quit();
 })
