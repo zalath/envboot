@@ -6,23 +6,27 @@
     <title></title>
   </head>
   <body>
-    
-    <div class="view face hidden" id="pm">
-      <iframe id="pmw" src=""></iframe>
-    </div>
+    <div class="view">
+      <div class="face hidden" id="task">
+        <iframe id="taskw" src=""></iframe>
+      </div>
 
-    <div class="view face hidden" id="tm">
-      <iframe id="tmw" src=""></iframe>
-    </div>
-    
-    <div class="view starter face" id="starter">
-    </div>
+      <div class="face hidden" id="pm">
+        <iframe id="pmw" src=""></iframe>
+      </div>
 
+      <div class="face hidden" id="tm">
+        <iframe id="tmw" src=""></iframe>
+      </div>
+      
+      <div class="starter face" id="starter">
+      </div>
+
+    </div>
     <div class="menu">
       <ul id='menu'>
       </ul>
     </div>
-
     <div class="top"></div>
     <div class="close" onclick="closeapp();"></div>
     <div class="boot" onclick="boot();"></div>
@@ -69,8 +73,10 @@
       var url = jda.url;
       var pmele = document.getElementById('pmw');
       var tmele = document.getElementById('tmw');
+      var taskele = document.getElementById('taskw');
       pmele.setAttribute('src',url.pm);
       tmele.setAttribute('src',url.tm);
+      taskele.setAttribute('src',url.task);
     });
     //switch display
     function hi(id){//hightlight
