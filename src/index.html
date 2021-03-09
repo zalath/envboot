@@ -6,30 +6,27 @@
     <title></title>
   </head>
   <body>
-    <div class="view">
-      <div class="face hidden" id="task">
-        <iframe id="taskw" src=""></iframe>
-      </div>
-
-      <div class="face hidden" id="pm">
-        <iframe id="pmw" src=""></iframe>
-      </div>
-
-      <div class="face hidden" id="tm">
-        <iframe id="tmw" src=""></iframe>
-      </div>
-      
+    <div class="fl left gy">
       <div class="starter face" id="starter">
       </div>
-
     </div>
-    <div class="menu">
-      <ul id='menu'>
-      </ul>
+    <div class="fl middle">
+      <div class="fl middlel"></div>
+      <div class="fl middlebox">
+        <div class="mbtn gy boot" onclick="movestarter()">move</div>
+        <div class="mbtn gy top"></div>
+        <div class="mbtn gy close" onclick="closeapp();"></div>
+        <div class="mbtn gy boot" onclick="boot();"></div>
+        <ul id='menu' class="menu">
+        </ul>
+      </div>
+      <div class="fl middler"></div>
     </div>
-    <div class="top"></div>
-    <div class="close" onclick="closeapp();"></div>
-    <div class="boot" onclick="boot();"></div>
+    <div class="fl right">
+      <iframe class="face hidden" id="taskw" src=""></iframe>
+      <iframe class="face" id="pmw" src=""></iframe>
+      <iframe class="face hidden" id="tmw" src=""></iframe>
+    </div>
   </body>
   <script>
     window.$ = window.jQuery = require('./jquery-3.4.1.min.js');
@@ -67,6 +64,7 @@
         var li = document.createElement('li');
         li.setAttribute('onclick',"hi('"+menu[d]['id']+"');");
         li.innerText = menu[d]['name'];
+        li.className="mbtn gy";
         menuele.appendChild(li);
       }
       //pm N tm init
@@ -99,6 +97,10 @@
     //start basic work environment
     function boot(){
       ipc.send('boot',{});
+    }
+    function movestarter(){
+      $v = $('.left');
+      $v;
     }
   </script>
 </html>
