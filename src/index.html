@@ -3,30 +3,43 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="index.css" type="text/css" />
+    <link rel="stylesheet" href="css/scrollbar.css" type="text/css" />
+    <link rel="stylesheet" href="css/left.css" type="text/css" />
+    <link rel="stylesheet" href="css/anime.css" type="text/css" />
+    <link rel="stylesheet" href="css/right.css" type="text/css" />
     <title></title>
   </head>
   <body>
-    <div class="fl left gy">
-      <div class="starter face" id="starter">
+
+    <div class="fl left top10">
+      <div class="starter st-shadow"></div>
+      <div class="starter st" id="starter">
       </div>
     </div>
+
     <div class="fl middle">
       <div class="fl middlel"></div>
       <div class="fl middlebox">
-        <div class="mbtn gy boot" onclick="movestarter()">move</div>
-        <div class="mbtn gy top"></div>
+        <div class="mbtn gy drag"></div>
         <div class="mbtn gy close" onclick="closeapp();"></div>
         <div class="mbtn gy boot" onclick="boot();"></div>
         <ul id='menu' class="menu">
+          <li class="mbtn gy" onclick="toggle('starter')">starter</li>
+          <li class="mbtn gy" onclick="hi('pm')">pm</li>
+          <li class="mbtn gy" onclick="hi('tm')">tm</li>
+          <li class="mbtn gy" onclick="hi('task')">task</li>
         </ul>
       </div>
       <div class="fl middler"></div>
     </div>
-    <div class="fl right">
-      <iframe class="face hidden" id="taskw" src=""></iframe>
+
+    <div class="fl right top10">
+      <iframe class="face" id="taskw" src=""></iframe>
       <iframe class="face" id="pmw" src=""></iframe>
-      <iframe class="face hidden" id="tmw" src=""></iframe>
+
+      <iframe class="face" id="tmw" src=""></iframe>
     </div>
+
   </body>
   <script>
     window.$ = window.jQuery = require('./jquery-3.4.1.min.js');
@@ -43,7 +56,7 @@
     //init data
     ipc.on('initd',function(event,jda){
       //init project list
-      var bodyele = $('.starter')[0];
+      var bodyele = $('.st')[0];
       var body = jda.starter;
       for(let d in body){
         if(body[d] == ''){
@@ -58,15 +71,15 @@
         }
       };
       //init menu
-      var menu = jda.menu;
-      var menuele = $('#menu')[0];
-      for(let d in menu){
-        var li = document.createElement('li');
-        li.setAttribute('onclick',"hi('"+menu[d]['id']+"');");
-        li.innerText = menu[d]['name'];
-        li.className="mbtn gy";
-        menuele.appendChild(li);
-      }
+      // var menu = jda.menu;
+      // var menuele = $('#menu')[0];
+      // for(let d in menu){
+        // var li = document.createElement('li');
+        // li.setAttribute('onclick',"hi('"+menu[d]['id']+"w');");
+        // li.innerText = menu[d]['name'];
+        // li.className="mbtn gy";
+        // menuele.appendChild(li);
+      // }
       //pm N tm init
       var url = jda.url;
       var pmele = document.getElementById('pmw');
@@ -78,8 +91,9 @@
     });
     //switch display
     function hi(id){//hightlight
-      $('.face').addClass('hidden');
-      $('#'+id).removeClass('hidden');
+      $('.face').removeClass('showw');
+      $('.face').addClass('hidew');
+      $('#'+id+'w').addClass('showw');
     }
     //add an empty line to the list
     function add_bar(body){
@@ -98,9 +112,15 @@
     function boot(){
       ipc.send('boot',{});
     }
-    function movestarter(){
-      $v = $('.left');
-      $v;
+    function toggle(id){
+      var ele = $('#'+id);
+      if(ele.hasClass('showmenu')){
+        ele.addClass('hidemenu');
+        ele.removeClass('showmenu');
+      }else{
+        ele.addClass('showmenu');
+        ele.removeClass('hidemenu');
+      }
     }
   </script>
 </html>

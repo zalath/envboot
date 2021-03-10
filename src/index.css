@@ -1,22 +1,12 @@
 .fl{
     float:left;
 }
-.left{
-    position:absolute;
-    left:30px;
-    transform-origin: right;
-    transform:perspective(200px)rotateY(-3deg);
-}
+
 .middle{
     position:absolute;
     left:210px;
-    height:100%;
     overflow: auto;
     width:60px;
-}
-.right{
-    position:absolute;
-    left:280px;
 }
 .menu{
     list-style: none;   
@@ -31,32 +21,23 @@
     /* box-shadow: 7px 7px 0px #333; */
     margin-top: 12px;
 }
-.starter{
-    box-shadow: -14px -12px 0px #333;
-    padding: 20px;
-    line-height: 20px;
-}
-.starter div{
-    cursor: pointer;
-}
-.gy{
-    color:white;
-    background-color: #777;
-}
-.top{
+.drag{
     -webkit-app-region:drag;
-}
-.hidden{
-    display:none;
-}
-iframe{
-    width:1000px;
-    height:1000px;
-    border:none;
 }
 .close{
     background-color: red;
 }
 .boot{
     background-color: gray;
+}
+
+.gy{
+    color:white;
+    background-color: #777;
+}
+.hidden{
+    display:none;
+}
+.top10{
+    margin-top:10px;
 }

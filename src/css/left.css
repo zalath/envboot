@@ -1,0 +1,25 @@
+.left{
+    position:absolute;
+    left:30px;
+    height:1040px;
+    transform-origin: right;
+    transform:perspective(200px)rotateY(-3deg);
+}
+.starter{
+    position: absolute;
+    box-shadow: -14px -12px 0px #333;
+    padding: 20px;
+    line-height: 20px;
+    overflow: auto;
+}
+.st{
+    clip-path: polygon(30% 0%, 100% 0, 100% 90%, 90% 100%, 0 100%, 0 20%);
+    background-color: #999;
+}
+.st-shadow{
+    margin-left:-20px;
+    margin-top:-20px;
+}
+.starter div{
+    cursor: pointer;
+}
