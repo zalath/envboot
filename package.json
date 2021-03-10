@@ -52,5 +52,13 @@
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
     "electron": "^12.0.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zalath/envboot.git"
+  },
+  "bugs": {
+    "url": "https://github.com/zalath/envboot/issues"
+  },
+  "homepage": "https://github.com/zalath/envboot#readme"
 }

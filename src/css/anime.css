@@ -46,27 +46,18 @@
         transform:perspective(200px)rotateY(3deg);
     }
 }
-@keyframes wavingshadow{
-    0%{
-        box-shadow: -14px -12px 0px #333;
-    }
-    20%{
-        box-shadow: -17px -9px 0px #333;
-    }
-    40%{
-        box-shadow: -12px -12px 0px #333;
-    }
-    60%{
-        box-shadow: -8px -17px 0px #333;
-    }
-    80%{
-        box-shadow: -15px -15px 0px #333;
-    }
-    100%{
-        box-shadow: -14px -12px 0px #333;
-    }
-}
 .showw{
     animation: showw .2s;
     animation-fill-mode: forwards;
+}
+@keyframes st-shadow{
+    0%{
+        clip-path: polygon(30px 0%, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px);
+    }
+    50%{
+        clip-path: polygon(5px 2px, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px);
+    }
+    100%{
+        clip-path: polygon(30px 0%, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px);
+    }
 }
