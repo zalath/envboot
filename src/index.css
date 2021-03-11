@@ -1,11 +1,13 @@
 .fl{
     float:left;
 }
-
+.gy{
+    color:white;
+    background-color: #777;
+}
 .middle{
     position:absolute;
-    left:210px;
-    overflow: auto;
+    left:240px;
     width:60px;
 }
 .menu{
@@ -18,8 +20,12 @@
     height:60px;
     line-height: 60px;
     text-align: center;
-    /* box-shadow: 7px 7px 0px #333; */
     margin-top: 12px;
+    cursor: pointer;
+}
+.ml{/*menu left*/
+}
+.mr{/*menu right*/
 }
 .drag{
     -webkit-app-region:drag;
@@ -31,10 +37,6 @@
     background-color: gray;
 }
 
-.gy{
-    color:white;
-    background-color: #777;
-}
 .hidden{
     display:none;
 }

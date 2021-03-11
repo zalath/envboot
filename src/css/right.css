@@ -1,17 +1,33 @@
 .right{
     position:absolute;
-    left:280px;
+    left:320px;
 }
 .face{
     transform-origin: left;
-    transform:perspective(200px)rotateY(3deg);
+    transform:perspective(5500px)rotateY(25deg);
     height:1040px;
-    background-color:#999;
-    box-shadow: 14px -12px 0px #333;
+    background-color: white;
+    /* box-shadow: 14px -12px 0px #333; */
 }
-iframe{
+.iframe{
     position:absolute;
     width:1000px;
     height:1000px;
     border:none;
+}
+.face-r{
+    transform: perspective(5500px)rotateY(26deg);
+    clip-path: polygon(0px 0%, 99% 0, 100% 97%, 15px 100%);
+    height: 1060px;
+    width: 1070px;
+    margin-left: -10px;
+    margin-top: -10px;
+}
+.face-b{
+    transform: perspective(5500px)rotateY(24deg);
+    clip-path: polygon(6px 34px, 100% 0, 98% 100%, 0 98%);
+    height: 1060px;
+    width: 1020px;
+    margin-left: -5px;
+    margin-top: -31px;
 }

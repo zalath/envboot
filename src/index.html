@@ -2,42 +2,46 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="index.css" type="text/css" />
     <link rel="stylesheet" href="css/scrollbar.css" type="text/css" />
+    <link rel="stylesheet" href="css/ro.css" type="text/css" />
     <link rel="stylesheet" href="css/left.css" type="text/css" />
     <link rel="stylesheet" href="css/anime.css" type="text/css" />
     <link rel="stylesheet" href="css/right.css" type="text/css" />
+    <link rel="stylesheet" href="index.css" type="text/css" />
     <title></title>
   </head>
   <body>
 
-    <div class="fl left top10">
+    <div class="fl left top10 showst">
       <div class="starter st-shadow-b st-clip b"></div>
       <div class="starter st-shadow-r st-clip r"></div>
-      <div class="starter st st-clip" id="starter">
+      <div class="starter st st-clip">
       </div>
     </div>
 
     <div class="fl middle">
       <div class="fl middlel"></div>
       <div class="fl middlebox">
-        <div class="mbtn gy drag"></div>
-        <div class="mbtn gy close" onclick="closeapp();"></div>
-        <div class="mbtn gy boot" onclick="boot();"></div>
+        <div class="mbtn gy drag r5"></div>
+        <div class="mbtn gy close r-15" onclick="closeapp();"></div>
+        <div class="mbtn gy boot r7" onclick="boot();">boot</div>
         <ul id='menu' class="menu">
-          <li class="mbtn gy" onclick="toggle('left')">starter</li>
-          <li class="mbtn gy" onclick="hi('pm')">pm</li>
-          <li class="mbtn gy" onclick="hi('tm')">tm</li>
-          <li class="mbtn gy" onclick="hi('task')">task</li>
+          <li class="mbtn gy ml r5" onclick="toggle('st')">starter</li>
+          <li class="mbtn gy mr r-7" onclick="hi('pm')">pm</li>
+          <li class="mbtn gy mr r10" onclick="hi('tm')">tm</li>
+          <li class="mbtn gy mr r-15" onclick="hi('task')">task</li>
+          <li class="mbtn gy mr r7" onclick="hi('')">close</li>
         </ul>
       </div>
       <div class="fl middler"></div>
     </div>
 
     <div class="fl right top10">
-      <iframe class="face" id="taskw" src=""></iframe>
-      <iframe class="face" id="pmw" src=""></iframe>
-      <iframe class="face" id="tmw" src=""></iframe>
+      <div class="iframe fr face face-r r"></div>
+      <div class="iframe fr face face-b b"></div>
+      <iframe class="iframe face fr" id="taskw" src=""></iframe>
+      <iframe class="iframe face fr" id="pmw" src=""></iframe>
+      <iframe class="iframe face fr" id="tmw" src=""></iframe>
     </div>
 
   </body>

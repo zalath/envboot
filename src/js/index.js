@@ -47,21 +47,22 @@ window.$ = window.jQuery = require('./jquery-3.4.1.min.js');
     });
     //switch display
     function hi(id){//hightlight
-      $('.face').removeClass('showw');
-      $('.face').addClass('hidew');
-      $('#'+id+'w').addClass('showw');
+      $('.fr').removeClass('showw');
+      $('.fr').addClass('hidew');
+      if(id != ''){
+        $('.face-r').addClass('showw');
+        $('.face-b').addClass('showw');
+        $('#'+id+'w').addClass('showw');
+      }
     }
     //add an empty line to the list
     function add_bar(body){
       var b = document.createElement('br');
       b.style.clear = 'both';
       var b1 = document.createElement('br');
-      b.style.clear = 'both';
-      var b2 = document.createElement('br');
-      b.style.clear = 'both';
+      b1.style.clear = 'both';
       body.appendChild(b);
       body.appendChild(b1);
-      body.appendChild(b2);
       return body;
     }
     //start basic work environment
@@ -69,12 +70,34 @@ window.$ = window.jQuery = require('./jquery-3.4.1.min.js');
       ipc.send('boot',{});
     }
     function toggle(id){
-      var ele = $('#'+id);
-      if(ele.hasClass('showmenu')){
-        ele.addClass('hidemenu');
-        ele.removeClass('showmenu');
+      var ele = $('.'+id);
+      var eler = $('.'+id+'-shadow-r');
+      var eleb = $('.'+id+'-shadow-b');
+      if(ele.hasClass('showst')){
+        setTimeout(() => {
+          eleb.addClass('hidest');  
+          eleb.removeClass('showst');
+        }, 70);
+        setTimeout(() => {
+          eler.addClass('hidest');  
+          eler.removeClass('showst');
+        }, 35);
+        setTimeout(() => {
+          ele.addClass('hidest');  
+          ele.removeClass('showst');
+        }, 0);
       }else{
-        ele.addClass('showmenu');
-        ele.removeClass('hidemenu');
+        setTimeout(() => {
+          ele.addClass('showst');
+          ele.removeClass('hidest');
+        }, 70);
+        setTimeout(() => {
+          eler.addClass('showst');
+          eler.removeClass('hidest');
+        }, 35);
+        setTimeout(() => {
+          eleb.addClass('showst');
+          eleb.removeClass('hidest');
+        }, 0);
       }
     }

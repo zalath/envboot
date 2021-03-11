@@ -1,0 +1,25 @@
+/*some rotate style*/
+.r10{
+    transform:rotate(10deg);
+}
+.r5{
+    transform:rotate(5deg);
+}
+.r15{
+    transform:rotate(15deg);
+}
+.r7{
+    transform:rotate(7deg);
+}
+.r-10{
+    transform:rotate(-10deg);
+}
+.r-5{
+    transform:rotate(-5deg);
+}
+.r-15{
+    transform:rotate(-15deg);
+}
+.r-7{
+    transform:rotate(-7deg);
+}

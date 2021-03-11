@@ -1,11 +1,13 @@
 .left{
     position:absolute;
-    left:30px;
+    left:240px;
     /* height:1040px; */
     transform-origin: right;
-    transform:perspective(200px)rotateY(-3deg);
+    transform:perspective(1500px)rotateY(-23deg);
 }
 .starter{
+    right:0px;
+    transform-origin: right;
     position: absolute;
     /* box-shadow: -14px -12px 0px #333; */
     padding: 20px;
@@ -15,20 +17,31 @@
     height:900px;
 }
 .st{
-    background-color: #999;
+    background-color: white;
+    margin-right:21px;
 }
 .st-shadow-r{
-    transform:rotate(1deg);
-    margin-left:-8px;
-    margin-top:-10px;
+    transform: rotate(1deg);
+    margin-right: 29px;
+    margin-top: -2px;
+    width: 132px;
+    height: 920px;
+    clip-path: polygon(0px 0%, 100% 0, 100% 100%, 8px 99%);
 }
 .st-shadow-b{
-    margin-left:15px;
-    margin-top:10px;
+    transform: rotate(-1deg);
+    margin-right: 11px;
+    margin-top: -10px;
+    width: 160px;
+    height: 940px;
+    clip-path: polygon(10px 8px, 100% 0, 100% 100%, 0 100%);
 }
 .starter div{
     cursor: pointer;
 }
 .st-clip{
-    clip-path: polygon(30px 0%, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px);
+    /* clip-path: polygon(30px 0%, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px); */
+}
+.st-list{
+    margin:0px 20px;
 }

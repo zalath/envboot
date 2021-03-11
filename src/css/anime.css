@@ -1,53 +1,53 @@
 
-@keyframes hidemenu{
+@keyframes hidest{
     from{        
-        transform:perspective(200px)rotateY(-3deg);
+        transform:perspective(1500px)rotateY(-14deg);
     }
-    to{
-        transform:perspective(200px)rotateY(-90deg);
+    to{ 
+        transform:perspective(1500px)rotateY(90deg);
     }
 }
-.hidemenu{
-    animation: hidemenu .2s;
+.hidest{
+    animation: hidest .2s ease-in-out;
     animation-fill-mode:forwards;
 }
-@keyframes showmenu{
+@keyframes showst{
     from{        
-        transform:perspective(200px)rotateY(-90deg);
+        transform:perspective(1500px)rotateY(90deg);
     }
     to{
-        transform:perspective(200px)rotateY(-3deg);
+        transform:perspective(1500px)rotateY(-14deg);
     }
 }
-.showmenu{
-    animation: showmenu .2s;
+.showst{
+    animation: showst .2s ease-in-out;
     animation-fill-mode:forwards;
 }
 
 @keyframes hidew{
     from{        
-        transform:perspective(200px)rotateY(3deg);
+        transform:perspective(5500px)rotateY(25deg);
     }
     to{
-        transform:perspective(200px)rotateY(90deg);
+        transform:perspective(5500px)rotateY(-90deg);
     }
 }
 .hidew{
-    animation: hidew .2s;
+    animation: hidew .2s ease-in-out;
     animation-fill-mode:forwards;
 
 }
 
 @keyframes showw{
     from{        
-        transform:perspective(200px)rotateY(90deg);
+        transform:perspective(5500px)rotateY(-90deg);
     }
     to{
-        transform:perspective(200px)rotateY(3deg);
+        transform:perspective(5500px)rotateY(25deg);
     }
 }
 .showw{
-    animation: showw .2s;
+    animation: showw .2s ease-in-out;
     animation-fill-mode: forwards;
 }
 @keyframes st-shadow{
