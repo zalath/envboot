@@ -79,26 +79,22 @@
     },
     "menu":{
         "1":{
-            "name":"starter",
-            "id":"starter"
+            "name":"pm",
+            "id":"pm",
+            "url":"http://pm.site.of.yours",
+            "rotate:5
         },
         "2":{
-            "name":"pm",
-            "id":"pm"
-        },
-        "3":{
             "name":"tm",
-            "id":"tm"
+            "id":"tm",
+            "url":"http://site.of.yours.too",
+            "rotate":7
         }
     },
     "boot":{
         "1":"C:/Progra...icat.exe",
         "2":"C:/Pr...ient/filezilla.exe",
         "3":"C:/Users/z....tion/chrome.exe"
-    },
-    "url":{
-        "pm":"https://google.com",
-        "tm":"https://stackoverflow.com/"
     }
 }
 ```
@@ -116,28 +112,24 @@
             "path":"d:/code/bsl_union"
         }
     },
-    "menu":{//menu on the left bottom, this can only change the name, if you want to change the id, you have to change the id in the html file.
+    "menu":{//menu at middle loaded from here.
         "1":{
             "name":"starter",
-            "id":"starter"
+            "id":"starter",
+            "url":"http://site.of.yours",//any url, will add a iframe to load this on the right side
+            "rotate":5//the degree this menu buttom rotates,only provide [5,7,10,15,-5,-7,-10,-15] to pick from
         },
         "2":{
             "name":"pm",
-            "id":"pm"
-        },
-        "3":{
-            "name":"tm",
-            "id":"tm"
+            "id":"pm",
+            "url":"http://site.of.yours.too",
+            "rotate":7
         }
     },
     "boot":{// some programe to start, if you want more, just follow the number and addin
         "1":"C:/P....at Premium 12/navicat.exe",
         "2":"C:/P....P Client/filezilla.exe",
         "3":"C:/Use...ication/chrome.exe"
-    },
-    "url":{
-        "pm":"any url start from http, effect the menu 2 above. Read the source code if you want to change",
-        "tm":"any url start from http, effect the menu 3 above. Read the source code if you want to change"
     }
 }
 ```

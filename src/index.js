@@ -1,6 +1,8 @@
 const { app, BrowserWindow } = require('electron');
 const ipc = require('electron').ipcMain;
 const exec = require('child_process').exec;
+const cpu = require('cpu-stat');
+const os = require('os');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -119,3 +121,18 @@ function init_boot(){
     i++;
   }
 }
+setInterval(() => {readbit()}, 1000);
+function readbit(){
+  cpu.usagePercent(usagePercent);
+  mainWindow.webContents.send('addmemdata',(os.totalmem()-os.freemem())*100/os.totalmem())
+  // read disk usage
+  // read network usage
+}
+function usagePercent(msg,rate,diffsecond){
+  if(msg == null){
+    mainWindow.webContents.send('addcpudata',rate);
+  }
+}
+ipc.on('readt',function(event,args){
+  // console.log('os.freemem'+os.freemem())
+})
