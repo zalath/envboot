@@ -36,7 +36,7 @@ ipc.on('initd',function(event,jda){
     var li = document.createElement('li');
     li.setAttribute('onclick',"hi('"+menu[d]['id']+"');");
     li.innerText = menu[d]['name'];
-    li.className="mbtn gy mr r"+menu[d]['rotate'];
+    li.className="mbtn mr r"+menu[d]['rotate'];
     menuele.appendChild(li);
     
     var ifm = document.createElement('iframe');
@@ -48,7 +48,13 @@ ipc.on('initd',function(event,jda){
   var li = document.createElement('li');
   li.setAttribute('onclick',"hi('');");
   li.innerText = 'close';
-  li.className="mbtn gy mr r7";
+  li.className="mbtn mr r7";
+  menuele.appendChild(li);
+  //for test
+  var li = document.createElement('li');
+  li.setAttribute('onclick',"readt();");
+  li.innerText = 'test';
+  li.className="mbtn mr r-15";
   menuele.appendChild(li);
 });
 //switch display

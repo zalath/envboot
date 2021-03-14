@@ -3,9 +3,46 @@
     <head>
         <script src="./jquery-3.4.1.min.js"></script>
         <script src="./echarts.js"></script>
+        <style>
+            body{
+                /* background-color: black; */
+            }
+            .shw{
+                font-size:300px;
+                font-weight: bold;
+                transform-origin: left;
+                /* transform:perspective(50px) rotateY(15deg) rotateX(10deg) */
+            }
+            .otto {
+  color: #444;
+  margin-left:300px;
+  -webkit-text-stroke:#111 13px;
+            }
+                
+        </style>
+        <style>
+            .demo {
+                text-align: center;
+                 font-family: Verdana;
+                 font-size: 30px;
+                 font-weight: bold;
+                 color: red;
+            }
+            
+            .stroke {
+                 -webkit-text-stroke: #111 2px;
+            }
+       </style>
     </head>
     <body>
-        <div id="cpu" style="height:1000px;"></div>
+        <div class="shw otto">
+            lsdjlj
+        </div>
+        <div class="demo">
+            <p>没有添加描边</p>
+            <p class="stroke">添加了字体描边</p>
+       </div>
+        <!-- <div id="cpu" style="height:1000px;"></div> -->
         <script>
 var myChart = echarts.init(document.getElementById('cpu'));
 // 绘制图表

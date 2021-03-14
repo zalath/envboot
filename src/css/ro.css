@@ -1,25 +1,25 @@
-/*some rotate style*/
+/*some rotateY style*/
 .r10{
-    transform:rotate(10deg);
+    transform:rotateY(30deg) rotateX(30deg) perspective(50px);
 }
 .r5{
-    transform:rotate(5deg);
+    transform:rotateY(40deg) rotateX(-16deg) perspective(50px);
 }
 .r15{
-    transform:rotate(15deg);
+    transform:rotateY(45deg) rotateX(10deg) perspective(50px);
 }
 .r7{
-    transform:rotate(7deg);
+    transform:rotateY(30deg) rotateX(-30deg) perspective(50px);
 }
 .r-10{
-    transform:rotate(-10deg);
+    transform:rotateY(-30deg) rotateX(-30deg) perspective(50px);
 }
 .r-5{
-    transform:rotate(-5deg);
+    transform:rotateY(-40deg) rotateX(16deg) perspective(50px);
 }
 .r-15{
-    transform:rotate(-15deg);
+    transform:rotateY(-45deg) rotateX(-10deg) perspective(50px);
 }
 .r-7{
-    transform:rotate(-7deg);
+    transform:rotateY(30deg) rotateX(-30deg) perspective(50px);
 }

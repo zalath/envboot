@@ -1,5 +1,4 @@
 var wathchpoint = 30
-var date = new Date();
 var cpuChart = echarts.init(document.getElementById('cpu'));
 initchart(cpuChart,'cpu')
 var cpuT = []
@@ -9,6 +8,7 @@ ipc.on('addcpudata',function(event,data){
         cpuT.shift()
         cpuR.shift()
     } 
+    var date = new Date();
     cpuT.push([date.getHours(),date.getMinutes(),date.getSeconds()].join(':'))
     cpuR.push(data)
     cpuChart.setOption({
@@ -30,6 +30,7 @@ ipc.on('addmemdata',function(event,data){
         memT.shift()
         memR.shift()
     } 
+    var date = new Date();
     memT.push([date.getHours(),date.getMinutes(),date.getSeconds()].join(':'))
     memR.push(data)
     memChart.setOption({

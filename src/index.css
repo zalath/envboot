@@ -15,14 +15,73 @@
     margin:0px;
     padding:0px;
 }
+@font-face{
+    font-family:"berlin";
+    src:url('static/berlin.ttf')
+}
 .mbtn{
+    font-family:'berlin';
     width:60px;
     height:60px;
     line-height: 60px;
     text-align: center;
     margin-top: 12px;
     cursor: pointer;
-    text-shadow: #000 5px 0 0, #000 0 1px 0, #000 -1px 0 0, #000 0 -1px 0;
+    font-size:65px;
+    font-weight:bold;
+    color:white;
+    text-transform:uppercase;
+    -webkit-text-stroke:#111 2px;
+    text-shadow:
+    -1px 0px #111
+    ,-2px 0px #111
+    ,-3px 0px #111
+    ,-4px 0px #111
+    ,-5px 0px #111
+    ,-6px 0px #111
+    ,-7px 0px #111
+    ,-8px 0px #111
+    ,-9px 0px #111
+    ,-10px 0px #111
+    ,-11px 0px #111
+    ,-12px 0px #111
+    ,-13px 0px #111
+    ,-14px 0px #111
+    ,-15px 0px #111
+    ,-16px 0px #111
+    ,-17px 0px #111
+    ,-18px 0px #111
+    ,-19px 0px #111
+    ,-20px 0px #111
+    ,-21px 0px #111
+    ;
+}
+.mbtn:hover{
+    color:#111;
+    -webkit-text-stroke: #fff 2px;
+    text-shadow:
+    -1px 0px #fff
+    ,-2px 0px #fff
+    ,-3px 0px #fff
+    ,-4px 0px #fff
+    ,-5px 0px #fff
+    ,-6px 0px #fff
+    ,-7px 0px #fff
+    ,-8px 0px #fff
+    ,-9px 0px #fff
+    ,-10px 0px #fff
+    ,-11px 0px #fff
+    ,-12px 0px #fff
+    ,-13px 0px #fff
+    ,-14px 0px #fff
+    ,-15px 0px #fff
+    ,-16px 0px #fff
+    ,-17px 0px #fff
+    ,-18px 0px #fff
+    ,-19px 0px #fff
+    ,-20px 0px #fff
+    ,-21px 0px #fff
+    ;
 }
 .ml{/*menu left*/
 }
@@ -32,10 +91,10 @@
     -webkit-app-region:drag;
 }
 .close{
-    background-color: red;
+    color: red;
 }
 .boot{
-    background-color: gray;
+    color: gray;
 }
 
 .hidden{
