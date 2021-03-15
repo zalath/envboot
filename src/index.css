@@ -23,6 +23,7 @@
     font-family:'berlin';
     position: relative;
     z-index:10;
+    list-style: none;
 }
 .mbtn{
     position: relative;
@@ -126,6 +127,25 @@
     width: 100px;
     height: 40px;
     position: absolute;
-    background-color: red;
+    /* background-color: red; */
     z-index:5;
+    opacity:0;
+}
+.hl{
+    width:100%;
+    height:100%;
+    animation-fill-mode: forwards;
+    position:absolute;
+}
+.hlight1{
+    background-color:rgba(255, 0, 247, 0.481);
+    animation: st-shadow 3s ease-in-out infinite;
+}
+.hlight2{
+    background-color:rgba(86, 252, 4, 0.398);
+    animation: st-shadow 4s ease-in-out 0.5s infinite;
+}
+.hlight3{
+    background-color:rgba(0, 221, 237, 0.453);
+    animation: st-shadow 3.5s ease-in-out 0.2s infinite;
 }

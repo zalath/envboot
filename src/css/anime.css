@@ -1,7 +1,7 @@
 
 @keyframes hidest{
     from{        
-        transform:perspective(1500px)rotateY(-14deg);
+        transform:perspective(1500px)rotateY(-4deg);
     }
     to{ 
         transform:perspective(1500px)rotateY(90deg);
@@ -16,7 +16,7 @@
         transform:perspective(1500px)rotateY(90deg);
     }
     to{
-        transform:perspective(1500px)rotateY(-14deg);
+        transform:perspective(1500px)rotateY(-4deg);
     }
 }
 .showst{
@@ -50,14 +50,24 @@
     animation: showw .2s ease-in-out;
     animation-fill-mode: forwards;
 }
+.hlight{
+    /* animation:st-shadow 3s ease-in-out infinite; */
+    /* animation-fill-mode: forwards; */
+}
 @keyframes st-shadow{
     0%{
-        clip-path: polygon(30px 0%, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px);
+        clip-path: polygon(0 0,85% 20%,90% 100%,0% 80%);
+    }
+    25%{
+        clip-path: polygon(0 20%,100% 0,90% 80%,10% 80%);
     }
     50%{
-        clip-path: polygon(5px 2px, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px);
+        clip-path: polygon(20% 20%,85% 0,100% 100%,10% 100%);
+    }
+    75%{
+        clip-path: polygon(20% 0%,100% 20%,100% 80%,0 100%);
     }
     100%{
-        clip-path: polygon(30px 0%, 100% 0, 100% 842px, 137px 100%, 0 100%, 0 58px);
+        clip-path: polygon(0 0,85% 20%,90% 100%,0% 80%);
     }
 }

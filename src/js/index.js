@@ -20,7 +20,7 @@ ipc.on('initd',function(event,jda){
     if(body[d] == ''){
       bodyele = add_bar(bodyele);
     }else{
-      var b = document.createElement('div');
+      var b = document.createElement('li');
       b.className = 'btn';
       b.setAttribute('onclick',"openproject('"+body[d].path+"');")
       b.setAttribute('oncontextmenu',"openpath('"+body[d].path+"');")
@@ -106,8 +106,12 @@ function init_hlight(){
   $('.btn').mouseout(function(){outhlight($(this))});
 }
 function tohlight(ele){
-  var w = (parseInt($(ele).css('lineHeight'),10) * $(ele)[0].innerText.length);
+  var lh = parseInt($(ele).css('lineHeight'),10);
+  var w = (lh * $(ele)[0].innerText.length);
   $('.hlight').css('width',w+'px')
+  // $('.hlight').css('marginTop',lh/4+'px');
+  // $('.hlight').css('height',lh/2+'px')
+  $('.hlight').css('height',lh+'px')
   $('.hlight').css('top',$(ele).offset().top);
   $('.hlight').css('left',$(ele).offset().left-w/4);
   $('.hlight').css('opacity',1);
