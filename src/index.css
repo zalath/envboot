@@ -19,7 +19,13 @@
     font-family:"berlin";
     src:url('static/berlin.ttf')
 }
+.btn{
+    font-family:'berlin';
+    position: relative;
+    z-index:10;
+}
 .mbtn{
+    position: relative;
     font-family:'berlin';
     width:60px;
     height:60px;
@@ -32,6 +38,7 @@
     color:white;
     text-transform:uppercase;
     -webkit-text-stroke:#111 2px;
+    z-index:10;
     text-shadow:
     -1px 0px #111
     ,-2px 0px #111
@@ -114,4 +121,11 @@
 }
 .wht{
     background-color: white;
+}
+.hlight{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    background-color: red;
+    z-index:5;
 }

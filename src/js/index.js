@@ -48,7 +48,7 @@ ipc.on('initd',function(event,jda){
   var li = document.createElement('li');
   li.setAttribute('onclick',"hi('');");
   li.innerText = 'close';
-  li.className="mbtn mr r7";
+  li.className="mbtn iii mr r7";
   menuele.appendChild(li);
   //for test
   var li = document.createElement('li');
@@ -56,6 +56,7 @@ ipc.on('initd',function(event,jda){
   li.innerText = 'test';
   li.className="mbtn mr r-15";
   menuele.appendChild(li);
+  init_hlight();
 });
 //switch display
 function hi(id){//hightlight
@@ -96,4 +97,22 @@ function boot(){
 }
 function readt(){
   ipc.send('readt',{});
+}
+function init_hlight(){
+  // $('.tohlight').setAttribute('onMouseEnter','tohlight(this)')
+  $('.mbtn').mouseover(function(){tohlight($(this))});
+  $('.mbtn').mouseout(function(){outhlight($(this))});
+  $('.btn').mouseover(function(){tohlight($(this))});
+  $('.btn').mouseout(function(){outhlight($(this))});
+}
+function tohlight(ele){
+  var w = (parseInt($(ele).css('lineHeight'),10) * $(ele)[0].innerText.length);
+  $('.hlight').css('width',w+'px')
+  $('.hlight').css('top',$(ele).offset().top);
+  $('.hlight').css('left',$(ele).offset().left-w/4);
+  $('.hlight').css('opacity',1);
+  $(ele).css('z-index',10);
+}
+function outhlight(){
+  $('.hlight').css('opacity',0);
 }
