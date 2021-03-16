@@ -20,8 +20,8 @@ ipc.on('initd',function(event,jda){
     if(body[d] == ''){
       bodyele = add_bar(bodyele);
     }else{
-      var b = document.createElement('li');
-      b.className = 'btn';
+      var b = document.createElement('div');
+      b.className = 'btn hlb';
       b.setAttribute('onclick',"openproject('"+body[d].path+"');")
       b.setAttribute('oncontextmenu',"openpath('"+body[d].path+"');")
       b.innerText = body[d].name;
@@ -36,7 +36,7 @@ ipc.on('initd',function(event,jda){
     var li = document.createElement('li');
     li.setAttribute('onclick',"hi('"+menu[d]['id']+"');");
     li.innerText = menu[d]['name'];
-    li.className="mbtn mr r"+menu[d]['rotate'];
+    li.className="mbtn hlb mr r"+menu[d]['rotate'];
     menuele.appendChild(li);
     
     var ifm = document.createElement('iframe');
@@ -48,13 +48,13 @@ ipc.on('initd',function(event,jda){
   var li = document.createElement('li');
   li.setAttribute('onclick',"hi('');");
   li.innerText = 'close';
-  li.className="mbtn iii mr r7";
+  li.className="mbtn hlb mr r7";
   menuele.appendChild(li);
   //for test
   var li = document.createElement('li');
   li.setAttribute('onclick',"readt();");
   li.innerText = 'test';
-  li.className="mbtn mr r-15";
+  li.className="mbtn hlb mr r-15";
   menuele.appendChild(li);
   init_hlight();
 });
@@ -97,26 +97,4 @@ function boot(){
 }
 function readt(){
   ipc.send('readt',{});
-}
-function init_hlight(){
-  // $('.tohlight').setAttribute('onMouseEnter','tohlight(this)')
-  $('.mbtn').mouseover(function(){tohlight($(this))});
-  $('.mbtn').mouseout(function(){outhlight($(this))});
-  $('.btn').mouseover(function(){tohlight($(this))});
-  $('.btn').mouseout(function(){outhlight($(this))});
-}
-function tohlight(ele){
-  var lh = parseInt($(ele).css('lineHeight'),10);
-  var w = (lh * $(ele)[0].innerText.length);
-  $('.hlight').css('width',w+'px')
-  // $('.hlight').css('marginTop',lh/4+'px');
-  // $('.hlight').css('height',lh/2+'px')
-  $('.hlight').css('height',lh+'px')
-  $('.hlight').css('top',$(ele).offset().top);
-  $('.hlight').css('left',$(ele).offset().left-w/4);
-  $('.hlight').css('opacity',1);
-  $(ele).css('z-index',10);
-}
-function outhlight(){
-  $('.hlight').css('opacity',0);
 }

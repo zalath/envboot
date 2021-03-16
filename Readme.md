@@ -11,6 +11,12 @@
     - electron-forge make
 ## view
 ![envboot](http://tm.99-k.com/envboot.jpg "envboot")
+
+## next
+- config page
+- chilren page support
+- middle menu effect
+
 ## configuration
 - config file's path is set in /c.json, change it to suit your needs.
 - config file's format is like:

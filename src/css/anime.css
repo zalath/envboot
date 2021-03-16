@@ -1,7 +1,7 @@
 
 @keyframes hidest{
     from{        
-        transform:perspective(1500px)rotateY(-4deg);
+        /* transform:perspective(1500px)rotateY(-4deg); */
     }
     to{ 
         transform:perspective(1500px)rotateY(90deg);
@@ -16,7 +16,7 @@
         transform:perspective(1500px)rotateY(90deg);
     }
     to{
-        transform:perspective(1500px)rotateY(-4deg);
+        /* transform:perspective(1500px)rotateY(-4deg); */
     }
 }
 .showst{
