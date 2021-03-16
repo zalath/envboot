@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { shell,app, BrowserWindow } = require('electron');
 const ipc = require('electron').ipcMain;
 const exec = require('child_process').exec;
 const cpu = require('cpu-stat');
@@ -27,7 +27,7 @@ const createWindow = () => {
   });
 
   mainWindow.webContents.once('dom-ready',()=>{
-    data = getconf(init_main);
+    getconf(init_main);
   });
   
   
@@ -68,6 +68,12 @@ app.on('activate', () => {
     createWindow();
   }
 });
+app.on('web-contents-created', (e, webContents) => {
+  webContents.on('new-window', (event, url) => {
+  event.preventDefault();
+  shell.openExternal(url);
+  });
+});
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.
@@ -83,7 +89,7 @@ ipc.on('closeapp',function(event,args){
   app.quit();
 })
 ipc.on('boot',function(event,args){
-  data = getconf(init_boot);
+  getconf(init_boot);
 })
 
 var confdata;

@@ -1,6 +1,6 @@
-window.$ = window.jQuery = require('./jquery-3.4.1.min.js');
+window.$ = window.jQuery = require('./static/jquery-3.4.1.min.js');
 const ipc = require('electron').ipcRenderer;
-window.echarts = require('./echarts.js')
+window.echarts = require('./static/echarts.js')
 // import * as echarts from 'echarts';
 function openproject(pname){
   ipc.send('openproject',{path:pname});
