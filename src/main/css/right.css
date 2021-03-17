@@ -28,3 +28,36 @@
     margin-left: -5px;
     margin-top: -31px;
 }
+.rbtn{
+    width: 50px;
+    height: 50px;
+    top:1px;
+    position: absolute;
+    z-index: 10;
+    font-size: 41px;
+    font-family: 'berlin';
+    color: white;
+}
+.tobrowser{
+    left:720px;
+}
+.reload{
+    left:800px;
+}
+.re-ful{
+    position: absolute;
+    width:100%;
+    height:100%;
+}
+.re-r{
+    transform: rotate3d(1, 1, 1, 346deg);
+}
+.re-b{
+    transform: rotate3d(1, 1, 1, 318deg);
+}
+.tb-r{
+    transform: rotate3d(1, 1, 1, 355deg);
+}
+.tb-b{
+    transform: rotate3d(1, 1, 1, 310deg);
+}

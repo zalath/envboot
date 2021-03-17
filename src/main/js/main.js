@@ -39,10 +39,13 @@ ipc.on('initd',function(event,jda){
     li.className="mbtn hlb mr r"+menu[d]['rotate'];
     menuele.appendChild(li);
     
+    $('iframe.showw').removeClass('showw');
     var ifm = document.createElement('iframe');
     ifm.setAttribute('id',menu[d]['id']+'w');
     ifm.setAttribute('src',menu[d]['url']);
-    ifm.className='face fr';
+    console.log(menu);
+    console.log(d);
+    ifm.className='face fr showw';
     iframeele.appendChild(ifm);
   }
   var li = document.createElement('li');
@@ -97,4 +100,12 @@ function boot(){
 }
 function readt(){
   ipc.send('readt',{});
+}
+function reload(){
+  var e = $('iframe.showw')[0];
+  e.src = e.src;
+}
+function tobrowser(){
+  var e = $('iframe.showw')[0];
+  ipc.send('tobrowser',e.src);
 }

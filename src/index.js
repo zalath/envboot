@@ -142,3 +142,6 @@ function usagePercent(msg,rate,diffsecond){
 ipc.on('readt',function(event,args){
   // console.log('os.freemem'+os.freemem())
 })
+ipc.on('tobrowser',function(event,arg){
+  shell.openExternal(arg);
+})

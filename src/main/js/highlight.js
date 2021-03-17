@@ -8,6 +8,9 @@ function init_hlight() {
 function tohlight(ele) {
     var lh = parseInt($(ele).css('lineHeight'), 10);
     if ($(ele)[0].innerText.length > 0) {
+        if(!lh){
+            lh = parseInt($(ele).css('fontSize'), 10);
+        }
         var w = (lh * $(ele)[0].innerText.length);
     } else {
         var w = parseInt($(ele).css('width'), 10) * 1.5;
@@ -23,7 +26,6 @@ function tohlight(ele) {
 }
 function outhlight(ele) {
     $('.hlight').css('opacity', 0);
-    $(ele).css('z-index', 1);
 }
 function lightclick() {
     var h = $('.hlight');
@@ -39,8 +41,12 @@ function lightclick() {
         var newHeight = parseInt(h.css('height'), 10)
         var newTop = parseInt(h.css('top'), 10)
         if (newWidth > 2 * (width+500)) {
-            h.css('opacity', 0);
-            clearInterval(anime)
+            // h.css('opacity', 0);
+            clearInterval(anime);
+            h.css('width', width+'px')
+            h.css('height', height + 'px')
+            h.css('left', left + 'px')
+            h.css('top', top + 'px')
         } else {
             h.css('width', (newWidth + (width+500) / freq) + 'px')
             h.css('height', (newHeight - height / freq / 2) + 'px')

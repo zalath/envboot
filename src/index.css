@@ -149,3 +149,6 @@
     background-color:rgba(0, 221, 237, 0.453);
     animation: st-shadow 3.5s ease-in-out 0.2s infinite;
 }
+.pointer{
+    cursor: pointer;
+}
