@@ -3,6 +3,8 @@ const ipc = require('electron').ipcMain;
 const exec = require('child_process').exec;
 const cpu = require('cpu-stat');
 const os = require('os');
+const winConf = require('./winConf')
+const cpage = require('./page/page')
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -14,17 +16,7 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 let mainWindow;
 const createWindow = () => {
   // Create the browser window.
-  mainWindow = new BrowserWindow({
-    width: 2000,
-    height: 1200,
-    frame:false,
-    transparent:true,
-    webPreferences:{
-      // devTools:false,
-      nodeIntegration:true,
-      contextIsolation: false,
-    }
-  });
+  mainWindow = new BrowserWindow(winConf.conf);
 
   mainWindow.webContents.once('dom-ready',()=>{
     getconf(init_main);
@@ -68,10 +60,15 @@ app.on('activate', () => {
     createWindow();
   }
 });
+var pages = []
 app.on('web-contents-created', (e, webContents) => {
   webContents.on('new-window', (event, url) => {
-  event.preventDefault();
-  shell.openExternal(url);
+    event.preventDefault();
+    var id = pages.length+1
+    var page = cpage.init(url,id)
+    pages[id]=page
+    pages[id].webContents.send('initd',{'id':id,'url':url})
+    // shell.openExternal(url);
   });
 });
 
