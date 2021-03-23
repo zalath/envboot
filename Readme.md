@@ -14,8 +14,12 @@
 
 ## next
 - config page
-- chilren page support
-- middle menu effect
+
+## tag
+- for child window is not stable in electron, I decide abonden this part and the right side of this app.
+- change style to battle menu and provide extra minimal style
+
+# end this project and start a new one
 
 ## configuration
 - config file's path is set in /c.json, change it to suit your needs.

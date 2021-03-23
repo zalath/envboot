@@ -1,5 +1,5 @@
 var conf = {
-    width: 2000,
+    width: 1500,
     height: 1200,
     frame:false,
     transparent:true,
